@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundscreen"
+    android:gravity="fill" >
+
+    
+    <TextView
+        android:id="@+id/lbl_signupmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="25dip"
+        android:layout_marginTop="30dip"
+        android:layout_marginBottom="30dip"
+        android:text="Welcome to RideNDivide"
+        android:textColor="#000000"
+        android:textSize="21dip" />
+        
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >       
+     <TextView
+        android:layout_column="1" 
+        android:layout_width="20dip"/>               
+     <TextView         
+        android:layout_column="2"
+        android:id="@+id/lbl_name"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="20dip" />
+
+
+
+
+     <EditText
+         android:id="@+id/txt_name"
+         android:layout_width="180dip"
+         android:layout_height="wrap_content"
+         android:inputType="textPersonName"
+         android:maxLength="48"
+         android:singleLine="true"
+         android:textSize="18sp" >
+
+<requestFocus />
+     </EditText> 
+      <TextView
+         android:layout_column="4" 
+         android:layout_width="20dip"/>   
+    </TableRow>
+
+
+
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_margin="2dip" >
+
+     <TextView
+        android:layout_column="1" 
+        android:layout_width="20dip"/>               
+
+     <TextView
+         android:id="@+id/lbl_phno"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_column="2"
+         android:text="Phone No"
+         android:textColor="#000000"
+         android:textSize="20dip" />
+
+
+
+     <EditText
+         android:id="@+id/txt_phno"
+         android:layout_width="180dip"
+         android:layout_height="wrap_content"
+         android:maxLength="11"
+         android:inputType="phone"
+         android:singleLine="true"
+         android:textSize="18sp" >
+
+     </EditText> 
+      <TextView
+         android:layout_column="4" 
+         android:layout_width="20dip"/> 
+    </TableRow>
+    
+     <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_margin="2dip" >
+     <TextView
+        android:layout_column="1" 
+        android:layout_width="20dip"/>               
+     <TextView         
+        android:layout_column="2"
+        android:id="@+id/lbl_email"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:text="Email Id"
+        android:textColor="#000000"
+        android:textSize="20dip" />
+
+
+     <EditText
+         android:id="@+id/txt_email"
+         android:layout_width="180dip"
+         android:layout_height="wrap_content"
+         android:inputType="textEmailAddress"
+         android:maxLength="48"
+         android:singleLine="true"
+         android:textSize="18sp" >
+
+     </EditText> 
+      <TextView
+         android:layout_column="4" 
+         android:layout_width="20dip"/> 
+    </TableRow>
+    
+     <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_margin="2dip" >
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_column="1" />
+               
+
+     <TextView
+         android:id="@+id/lbl_nu_password"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_column="2"
+         android:text="Password"
+         android:textColor="#000000"
+         android:textSize="20dip" />
+
+
+
+     <EditText
+         android:id="@+id/txt_nu_password"
+         android:layout_width="180dip"
+         android:layout_height="wrap_content"
+         android:inputType="textPassword"
+         android:maxLength="48"
+         android:singleLine="true"
+         android:textSize="18sp" >
+
+     </EditText> 
+      <TextView
+         android:layout_column="4" 
+         android:layout_width="20dip"/> 
+    </TableRow>
+    
+   <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         android:id="@+id/relativeLayout1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" >
+      <Button
+        android:id="@+id/btn_new_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/tableRow5"
+        android:layout_marginLeft="90dip"
+        android:layout_marginTop="20dip" 
+        android:text="Sign In"/> 
+        
+              
+    <Button
+        android:id="@+id/btn_new_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btn_signup"
+        android:layout_marginLeft="160dip"
+        android:layout_marginTop="20dip" 
+        android:text=" Cancel " />  
+     </RelativeLayout>
+
+</TableLayout>
+

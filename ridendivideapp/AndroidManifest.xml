@@ -1,0 +1,59 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="oss.ridendivideapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+     <!-- Permissions -->  
+     <uses-permission android:name="android.permission.INTERNET" />  
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+   
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="15" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+      
+         <!-- Libraries -->
+        <uses-library android:name="com.google.android.maps" />
+       	
+        <activity
+            android:name=".LoginScreenActivity"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:label="@string/app_name"
+            android:name=".NewUserActivity" >
+        </activity>
+         <activity
+            android:label="@string/app_name"
+            android:name=".ChooseRideActivity" >
+        </activity>
+        
+         <activity
+            android:label="@string/app_name"
+            android:name=".PlacesAutoCompleteActivity" >
+             </activity>
+             <activity
+            android:label="@string/app_name"
+            android:name=".TakeRideActivity" >
+        </activity>
+         <activity
+            android:label="@string/app_name"
+            android:name=".DynamicListActivity" >
+        </activity>
+        
+          <activity
+            android:label="@string/app_name"
+            android:name=".ConfirmRideActivity" >
+        </activity>
+</application>
+
+</manifest>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundscreen" >
+
+  <TextView
+        android:id="@+id/lbl_optionmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="135dip"
+        android:text="Choose an option!"
+        android:textColor="#000000"
+        android:textSize="25dip" />
+
+  <RadioGroup
+     	android:id="@+id/radio_option"
+  		android:layout_width="wrap_content"
+   		android:layout_height="wrap_content" 
+   		android:layout_marginLeft="70dip">
+
+     <RadioButton
+         android:id="@+id/opn_giveride"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:focusable="true"
+         android:text=" Give a Ride"
+         android:textColor="#000000"
+         android:textSize="25dip"
+         />
+
+   <RadioButton
+    android:id="@+id/opn_takeride"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=" Take a Ride"
+    android:focusable="false"
+    android:textColor="#000000"
+    android:textSize="25dip" 
+    />
+   
+   </RadioGroup>
+</LinearLayout>
+

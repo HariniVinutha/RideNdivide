@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundscreen"
+    android:gravity="fill" >
+    
+   
+    <TextView
+        android:id="@+id/lbl_signupmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="25dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginBottom="20dip"
+        android:text="Sign in to kick start your carpooling experience..."
+        android:textColor="#000000"
+        android:textSize="21dip" />
+    
+
+    
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+     
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_login_email"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="Email Id"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+
+       <EditText
+           android:id="@+id/txt_login_email"
+           android:layout_width="180dip"
+           android:layout_height="wrap_content"
+           android:inputType="textEmailAddress"
+           android:maxLength="48"
+           android:textSize="18sp" >
+           <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="4" />
+    </TableRow>
+    
+        <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="Password"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+
+        <EditText
+            android:id="@+id/txt_password"
+            android:layout_width="180dip"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="48"
+            android:textSize="18sp" >
+        </EditText>
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="4" />
+    </TableRow>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_login_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tableRow4"
+            android:layout_marginLeft="150dip"
+            android:text="  Sign in  " />
+        
+        <Button
+            android:id="@+id/btn_login_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tableRow4"
+            android:layout_marginLeft="230dip"
+            android:layout_marginBottom="20dip"
+            android:text=" Cancel " />
+     </RelativeLayout> 
+     
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+     <TextView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_column="1" />
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+     
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_create_account"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="New User?"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+
+        <Button
+            android:id="@+id/btn_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tableRow4"
+            android:text="Create an account" />
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="4" />
+    </TableRow>
+    
+    </TableLayout>

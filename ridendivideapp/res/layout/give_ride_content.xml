@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundscreen"
+    android:gravity="fill" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_column="1" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_gr_from"
+            android:layout_width="55dip"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="From"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+           <AutoCompleteTextView
+            android:id="@+id/txt_gr_from"
+            android:layout_width="215dip"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|textPostalAddress"
+            android:maxLength="48"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:textSize="18sp">  <requestFocus/> </AutoCompleteTextView> 
+          
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="4" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_gr_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="To"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+        <AutoCompleteTextView
+            android:id="@+id/txt_gr_to"
+            android:layout_width="215dip"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:maxLength="48"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:textSize="18sp" >
+        </AutoCompleteTextView>
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="4" />
+    </TableRow>
+     <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_gr_radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="Radius"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+        <EditText
+                android:id="@+id/txt_gr_radius"
+                android:layout_width="90dip"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:inputType="number"
+                android:maxLength="2"
+                android:singleLine="true"
+                android:layout_toRightOf="@+id/lbl_radius"/>
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="4" />
+    </TableRow>
+    
+ <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        
+<Button android:id="@+id/btn_gr_datepicker"
+    android:text="07/16/2012"
+	android:layout_width="135dip"
+    android:layout_height="50dp"
+    android:layout_below="@+id/tableRow7"
+    android:layout_marginLeft="15dip"
+    android:layout_marginTop="10dip" />
+
+<Button
+    android:id="@+id/btn_gr_timepicker"
+    android:layout_width="150dip"
+     android:layout_height="50dip"
+    android:layout_marginLeft="5dip"
+    android:layout_marginRight="15dip"
+    android:layout_marginTop="10dip"
+    android:layout_toRightOf="@+id/btn_gr_datepicker"
+    android:text="11:22 AM" />
+
+</RelativeLayout>
+        <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/TableLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="2dip" >
+
+            <TextView
+                android:id="@+id/lbl_gr_seats"
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="10dip"
+                android:text="Seats"
+                android:layout_marginTop="10dip"
+                android:textColor="#000000"
+                android:textSize="20dip" />
+
+
+            <Spinner
+                android:id="@+id/spn_gr_seats"
+                android:layout_width="90dip"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_marginTop="10dip"
+                android:layout_toRightOf="@+id/lbl_seats"
+                tools:listitem="@android:layout/simple_spinner_item" />
+
+            <TextView
+                android:id="@+id/lbl_gr_cost"
+                android:layout_width="60dip"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_toRightOf="@+id/spn_seats"
+                android:text=" Cost"
+                android:layout_marginTop="10dip"
+                android:textColor="#000000"
+                android:textSize="20dip" />
+            
+
+            <EditText
+                android:id="@+id/txt_gr_cost"
+                android:layout_width="80dip"
+                android:layout_height="wrap_content"
+                android:layout_column="4"
+                android:layout_marginTop="10dip"
+                android:layout_toRightOf="@+id/lbl_gr_cost"
+                android:singleLine="true"
+                android:maxLength="7"
+                android:inputType="number|numberDecimal" />
+
+        </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_gr_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tableRow5"
+            android:layout_marginLeft="100dip"
+            android:layout_marginTop="10dip"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/btn_gr_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_toRightOf="@+id/btn_gr_submit"
+            android:text=" Cancel " />
+    </RelativeLayout>
+
+</TableLayout>

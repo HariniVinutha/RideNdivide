@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundscreen"
+    android:gravity="fill" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_column="1" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_tr_from"
+            android:layout_width="55dip"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="From"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+         <AutoCompleteTextView
+            android:id="@+id/txt_tr_from"
+            android:layout_width="215dip"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|textPostalAddress"
+            android:maxLength="48"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:textSize="18sp">  <requestFocus/> </AutoCompleteTextView>       
+        <TextView
+            android:layout_width="30dip"
+            android:layout_column="4" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/lbl_tr_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="To"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+          <AutoCompleteTextView
+            android:id="@+id/txt_tr_to"
+            android:layout_width="215dip"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName|textPostalAddress"
+            android:maxLength="48"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:textSize="18sp"> </AutoCompleteTextView> 
+
+        <TextView
+            android:layout_width="30dip"
+            android:layout_column="4" />
+    </TableRow>
+     
+       
+     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        
+<Button android:id="@+id/btn_tr_datepicker"
+    android:text="07/16/2012"
+	android:layout_width="135dip"
+    android:layout_height="50dp"
+    android:layout_below="@+id/tableRow7"
+    android:layout_marginLeft="15dip"
+    android:layout_marginTop="10dip" />
+
+
+<Button
+    android:id="@+id/btn_tr_timepicker"
+    android:layout_width="150dip"
+     android:layout_height="50dip"
+    android:layout_marginLeft="5dip"
+    android:layout_marginRight="15dip"
+    android:layout_marginTop="10dip"
+    android:layout_toRightOf="@+id/btn_tr_datepicker"
+    android:text="11:22 AM" />
+
+</RelativeLayout>
+
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/TableLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+         <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_margin="2dip">
+
+        <TextView
+            android:layout_width="15dip"
+            android:layout_column="1" />
+        
+        <TextView
+            android:id="@+id/lbl_tr_flexible"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="Flexible Mins"
+            android:layout_marginTop="10dip"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+            <Spinner
+                android:id="@+id/spn_tr_flexhrs"
+                android:layout_width="155dip"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                tools:listitem="@android:layout/simple_spinner_item"
+                android:layout_marginTop="10dip" />
+                
+        
+           <TextView
+            android:layout_width="30dip"
+            android:layout_column="4" />
+    </TableRow>       
+         
+         <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dip" >
+
+        <TextView
+            android:layout_width="20dip"
+            android:layout_column="1" />
+        
+        <TextView
+            android:id="@+id/lbl_tr_seats"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:text="Seats"
+            android:layout_marginTop="10dip"
+            android:textColor="#000000"
+            android:textSize="20dip" />
+
+            <Spinner
+                android:id="@+id/spn_tr_seats"
+                android:layout_width="155dip"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_marginTop="10dip"
+                tools:listitem="@android:layout/simple_spinner_item" />
+                
+        
+           <TextView
+            android:layout_width="20dip"
+            android:layout_column="4" />
+    </TableRow>       
+    </TableLayout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btn_tr_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tableRow5"
+            android:layout_marginLeft="100dip"
+            android:layout_marginTop="10dip"
+            android:text="Search" />
+
+        <Button
+            android:id="@+id/btn_tr_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_toRightOf="@+id/btn_tr_search"
+            android:text=" Cancel " />
+    </RelativeLayout>
+
+</TableLayout>
