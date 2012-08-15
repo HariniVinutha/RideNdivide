@@ -1,42 +1,52 @@
+/*********************************************************************************************************
+**
+** RidenDivide- An open source project for the Android platform, helps users to carpool
+** Application written in Java
+** Application uses Google Places API
+** 
+** Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+**
+** Please see the file License in this distribution for license terms. 
+** Below is the link to the file License.
+** https://github.com/HariniVinutha/RideNdivide/blob/master/License
+**
+** Following is the link for the repository- https://github.com/HariniVinutha/RideNdivide
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**  
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+** 
+** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
+** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
+** 
+** References - https://developers.google.com/academy/apis/maps/places/autocomplete-android
+** License- https://developers.google.com/readme/terms, http://www.google.com/intl/en/policies/terms/
+**
+*********************************************************************************************************/
+
 package oss.ridendivideapp;
 
-
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.Toast;
-
-
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.util.ArrayList;
-import oss.ridendivideapp.GiveRideActivity;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import oss.ridendivideapp.AutoCompleteAPI;
 
-
+/*********************************************************************************************************
+** PlacesAutoCompleteAdapter is used to provide the places autocomplete result to 
+** AutoCompleteTextView. Also used in order to capture the user input from the AutoCompleteTextView 
+** and pass it to the Places Autocomplete service.
+*********************************************************************************************************/
 public class PlacesAutoCompleteAdapter extends ArrayAdapter<String> implements Filterable {
     private ArrayList<String> resultList;
     AutoCompleteAPI ac=new AutoCompleteAPI();
@@ -62,11 +72,10 @@ public class PlacesAutoCompleteAdapter extends ArrayAdapter<String> implements F
             protected FilterResults performFiltering(CharSequence constraint) {
                 FilterResults filterResults = new FilterResults();
                 if (constraint != null) {
-                    // Retrieve the autocomplete results.
+                    /* Retrieve the autocomplete results */
                     resultList = ac.autocomplete(constraint.toString());
-
-                    
-                    // Assign the data to the FilterResults
+                   
+                    /* Assign the data to the FilterResults */
                     filterResults.values = resultList;
                     filterResults.count = resultList.size();
                 }

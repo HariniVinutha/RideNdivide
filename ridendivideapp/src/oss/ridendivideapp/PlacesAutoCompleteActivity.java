@@ -1,18 +1,50 @@
+/********************************************************************************************************
+**
+** RidenDivide- An open source project for the Android platform, helps users to carpool
+** Application written in Java
+** Application uses Google Places API
+** 
+** Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+**
+** Please see the file License in this distribution for license terms. 
+** Below is the link to the file License.
+** https://github.com/HariniVinutha/RideNdivide/blob/master/License
+**
+** Following is the link for the repository- https://github.com/HariniVinutha/RideNdivide
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**  
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+** 
+** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
+** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
+** 
+** References - http://android.vexedlogic.com/2011/07/16/android-date-time-setting-dialog/
+** http://stackoverflow.com/questions/3574644/how-can-i-find-the-latitude-and-longitude-from-address
+** License- http://stackexchange.com/legal
+** https://developers.google.com/academy/apis/maps/places/autocomplete-android
+** License- https://developers.google.com/readme/terms, http://www.google.com/intl/en/policies/terms/
+*********************************************************************************************************/
+
 package oss.ridendivideapp;
 
 import android.app.*;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -20,29 +52,14 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
-import android.widget.Toast;
-
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-
-import oss.ridendivideapp.GiveRideActivity;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -55,8 +72,13 @@ import org.json.JSONObject;
 import oss.ridendivideapp.PlacesAutoCompleteAdapter;
 import oss.ridendivideapp.DBAdapter;
 
+/*********************************************************************************************************
+** PlacesAutoCompleteActivity is used by the carpool host to enter ride details like from and to address, 
+** radius, seats, date and time.
+*********************************************************************************************************/
 public class PlacesAutoCompleteActivity extends Activity implements OnItemClickListener {
     
+	/* Defining variables */
 	private AutoCompleteTextView gr_frm_acView, gr_to_acView;
 	private  PlacesAutoCompleteAdapter gr_frm_adapter, gr_to_adapter;
 	private Spinner sp_seats;
@@ -74,23 +96,24 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
 	int flag;
 	private DBAdapter gr_datasource;
 	
-	
+	/* Create calendar instance to set/get date and time */
     private Calendar dateTime = Calendar.getInstance();
     private SimpleDateFormat dateFormatter = new SimpleDateFormat("MMMM dd, yyyy");
     private SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm a");
- 
     private static final int DIALOG_DATE = 1;
     private static final int DIALOG_TIME = 2;
 	
+    /* Called when the activity is first created */
 	@Override
     public void onCreate(Bundle savedInstanceState) {
+		try{
     	
             super.onCreate(savedInstanceState);
             setContentView(R.layout.give_ride_content);
-            
+            /* Creating DBAdapter instance */
             gr_datasource=new DBAdapter(this);
            
-            
+		    /* Get email ID from previous activity to maintain session */
             Bundle extras = getIntent().getExtras();
             if (extras != null) {
             	str_usrid = extras.getString("usrid");
@@ -98,29 +121,28 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
             
             buttonSubmit = (Button)findViewById(R.id.btn_gr_submit);
             buttonCancel = (Button)findViewById(R.id.btn_gr_cancel);
-            et_radius = (EditText) this.findViewById(R.id.txt_gr_radius);
+            /* Get radius and cost */
+			et_radius = (EditText) this.findViewById(R.id.txt_gr_radius);
             et_cost = (EditText) this.findViewById(R.id.txt_gr_cost);
              
+			/* Adding PlacesAutoComplete adapter to the FROM autocomplete field */
             gr_frm_acView = (AutoCompleteTextView) findViewById(R.id.txt_gr_from);
             gr_frm_adapter = new PlacesAutoCompleteAdapter(this, R.layout.frm_item_list);
-            Toast.makeText(this, "gr_frm_adapter set", Toast.LENGTH_LONG).show();
             gr_frm_acView.setAdapter(gr_frm_adapter);        
             gr_frm_acView.setOnItemClickListener(this);
             
-            
+            /* Adding PlacesAutoComplete adapter to the TO autocomplete field */
             gr_to_acView = (AutoCompleteTextView) findViewById(R.id.txt_gr_to);
             gr_to_adapter = new PlacesAutoCompleteAdapter(this, R.layout.to_item_list);
-            Toast.makeText(this, "gr_to_adapter set", Toast.LENGTH_LONG).show();
             gr_to_acView.setAdapter(gr_to_adapter);        
             gr_to_acView.setOnItemClickListener(this);
             
+			/* Adding array adapter to spinner control for seats */
             sp_seats = (Spinner)findViewById(R.id.spn_gr_seats); 
             ArrayAdapter<String> seats_adapter = new ArrayAdapter<String> (this, android.R.layout.simple_spinner_item,str_seats);
             sp_seats.setAdapter(seats_adapter);
            
-            Toast.makeText(this, "usrid: " + str_usrid, Toast.LENGTH_SHORT).show();
-            Toast.makeText(this, "seat " + selected_seat, Toast.LENGTH_SHORT).show();
-		
+		   /* Prompt a dialog box upon Date button click */
             datePicker = (Button) findViewById(R.id.btn_gr_datepicker);
             datePicker.setText(dateFormatter.format(dateTime.getTime()));
             datePicker.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +150,8 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
                     showDialog(DIALOG_DATE);
                 }
             });
-     
+			
+			/* Prompt a dialog box upon Time button click */
             timePicker = (Button) findViewById(R.id.btn_gr_timepicker);
             timePicker.setText(timeFormatter.format(dateTime.getTime()));
             timePicker.setOnClickListener(new View.OnClickListener() {
@@ -141,180 +164,147 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
             buttonSubmit.setOnClickListener(buttonSubmitOnClickListener);
             buttonCancel.setOnClickListener(buttonCancelOnClickListener);
             sp_seats.setOnItemSelectedListener(spinnerseatsOnItemSelectedListener);
+	}catch(Exception e)
+	{
+		 Log.e("Places AutoComplete Activity OnCreate:", e.toString());
+    }
+	
 	}
-	
-		Spinner.OnItemSelectedListener spinnerseatsOnItemSelectedListener =new Spinner.OnItemSelectedListener(){
-			@Override
-			
-			public void onItemSelected(AdapterView<?> arg0, View arg1,
- 					int arg2, long arg3) {
- 				int item = sp_seats.getSelectedItemPosition();
- 				selected_seat=str_seats[item].toString();
- 			}
- 			public void onNothingSelected(AdapterView<?> arg0) {
- 				flag=1;
- 				
- 			}
-		};		
-	
-		 Button.OnClickListener buttonSubmitOnClickListener = new Button.OnClickListener(){
-	  @Override
-	  public void onClick(View arg0) {
-
-		  gr_datasource.open();
-     	 Toast.makeText(PlacesAutoCompleteActivity.this, "into button submit", Toast.LENGTH_SHORT).show();
-     	 gr_frm_addr=gr_frm_acView.getText().toString();
-     	 gr_to_addr=gr_to_acView.getText().toString();
-     	 Toast.makeText(PlacesAutoCompleteActivity.this, gr_frm_addr, Toast.LENGTH_LONG).show();
-     	 Toast.makeText(PlacesAutoCompleteActivity.this, gr_to_addr, Toast.LENGTH_LONG).show();
-         flag=0;
-  
-         if(gr_frm_addr.length()==0)  	
-         {
-        	 gr_frm_acView.setError("Enter from address");
-        	 flag=1;
-         }else if(gr_to_addr.length()==0)
-         {
-        	 gr_to_acView.setError("Enter to address");
-        	 flag=1;
-         }
-   
-         Toast.makeText(PlacesAutoCompleteActivity.this, selected_seat, Toast.LENGTH_LONG).show();
-        /* if(selected_seat.equals("0"))
-         {
-        	 flag=1;
-        	 AlertDialog.Builder builder = new AlertDialog.Builder(PlacesAutoCompleteActivity.this);
-        	builder.setTitle("Ride 'n Divide");
-        	 builder.setMessage("Choose seats available")
-        	        .setCancelable(false)
-        	        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-        	            public void onClick(DialogInterface dialog, int id) {
-        	                 dialog.cancel();
-        	            }
-        	        });
-        	 AlertDialog alert = builder.create();
-        	 alert.show();
-        	 
-        		 }
-          */
-         String str_radius=et_radius.getText().toString();
-         if(str_radius.length() == 0){
-        	 et_radius.setError( "Enter valid radius" );
-         	 flag =1;
-         }
-         else 
-        	 {
-        	  rad_value = Integer.valueOf(et_radius.getText().toString()); 
-        	 	if (rad_value < 0 || rad_value > 20) {  
-        	 		et_radius.setError( "Limit 20 miles" ); 
-        	 		flag =1;
-        	 	}
-         }
-        
-         String str_cost=et_cost.getText().toString();
-         if(str_cost.length() == 0){
-        	 et_cost.setError( "Enter valid cost" );
-         	 flag =1;
-         }	 
-         else
-         	{
-        	 cost_value =  Float.valueOf(et_cost.getText().toString());  
-        	 	if (cost_value < 0 || cost_value > 1000) {  
-        	 		et_cost.setError( "Limit 1000 dollars" ); 
-        	 		flag =1;
-        	 	}
-         	}
-         
-        
-                          
-         if(flag==0)
-         {
-        	 jsonObject_main_frm=getLocationInfo(gr_frm_addr);
-        	 frm_lattitude=getLattitude(jsonObject_main_frm);
-        	 frm_longitude=getLongitude(jsonObject_main_frm);
-        	 
-        	 jsonObject_main_to=getLocationInfo(gr_to_addr);
-        	 to_lattitude=getLattitude(jsonObject_main_to);
-        	 to_longitude=getLongitude(jsonObject_main_to);
-        	 
-        	 Toast.makeText(PlacesAutoCompleteActivity.this, "Frm_long" +frm_longitude.toString(), Toast.LENGTH_SHORT).show();
-           	 Toast.makeText(PlacesAutoCompleteActivity.this, "frm_lat" +frm_lattitude.toString(), Toast.LENGTH_SHORT).show();
-           	 
-           	//public long insertridedetails(String usrid, String from, String to, Integer radius, String date, 
-           	// String time, String seats, Float cost, Double fromlat, Double fromlong, Double tolat, Double tolong)
-           	
-           	 str_date= datePicker.getText().toString();
-        	 time = dateTime.getTimeInMillis();
-           
-           	long id;
-           	 id= gr_datasource.insertridedetails(str_usrid, gr_frm_addr, gr_to_addr, rad_value, str_date, time, selected_seat, cost_value, frm_lattitude, frm_longitude, to_lattitude, to_longitude);
-                  	       	
-         	gr_datasource.close();
-         	
-         	AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PlacesAutoCompleteActivity.this);
+		/* Get selected seat from spinner control */
+			Spinner.OnItemSelectedListener spinnerseatsOnItemSelectedListener =new Spinner.OnItemSelectedListener(){
+				@Override
 				
-   			// set title
- 			alertDialogBuilder.setTitle("Ride 'n Divide");
-  
- 			// set dialog message
- 			alertDialogBuilder
- 				.setMessage("Thank you, for giving a ride. Do you want to check other rides?")
- 				.setCancelable(false)
- 				.setPositiveButton("Check Rides",new DialogInterface.OnClickListener() {
- 					public void onClick(DialogInterface dialog,int id) {
- 						// if this button is clicked, close
- 						// current activity
- 						Intent reselect = new Intent(PlacesAutoCompleteActivity.this,ChooseRideActivity.class);
-                 		startActivity(reselect);
- 					}
- 				  })
- 				.setNegativeButton("Exit",new DialogInterface.OnClickListener() {
- 					public void onClick(DialogInterface dialog,int id) {
- 						// if this button is clicked, just close
- 						// the dialog box and do nothing
- 						dialog.cancel();
- 						PlacesAutoCompleteActivity.this.finish();
- 						
- 					}
- 				});
-  
- 				// create alert dialog
- 				AlertDialog alertDialog = alertDialogBuilder.create();
-  
- 				// show it
- 				alertDialog.show();
-
-     }
+				public void onItemSelected(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					int item = sp_seats.getSelectedItemPosition();
+					selected_seat=str_seats[item].toString();
+				}
+				public void onNothingSelected(AdapterView<?> arg0) {
+					flag=1;
+					
+				}
+			};		
+		
+			Button.OnClickListener buttonSubmitOnClickListener = new Button.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				try{
+				/* Open Database */
+				gr_datasource.open();
+				/* Get from and to address from autocomplete fields */
+				gr_frm_addr=gr_frm_acView.getText().toString();
+				gr_to_addr=gr_to_acView.getText().toString();
+					
+				flag=0;
+				/* Checking if FROM and TO address is empty */
+				if(gr_frm_addr.length()==0)  	
+				{
+					gr_frm_acView.setError("Enter from address");
+					flag=1;
+				}else if(gr_to_addr.length()==0)
+				{
+					gr_to_acView.setError("Enter to address");
+					flag=1;
+				}
+			/* Radius validation */
+			String str_radius=et_radius.getText().toString();
+			if(str_radius.length() == 0){
+				et_radius.setError( "Enter valid radius" );
+				flag =1;
+			}
+			else 
+				{
+				rad_value = Integer.valueOf(et_radius.getText().toString()); 
+					if (rad_value < 0 || rad_value > 20) {  
+						et_radius.setError( "Limit 20 miles" ); 
+						flag =1;
+					}
+			}
+			/* Cost Validation */
+			String str_cost=et_cost.getText().toString();
+			if(str_cost.length() == 0){
+				et_cost.setError( "Enter valid cost" );
+				flag =1;
+			}	 
+			else
+				{
+				cost_value =  Float.valueOf(et_cost.getText().toString());  
+					if (cost_value < 0 || cost_value > 1000) {  
+						et_cost.setError( "Limit 1000 dollars" ); 
+						flag =1;
+					}
+				}
+											
+			if(flag==0)
+			{	
+				/* Function call to calculate lattitudes and longitudes for FROM address */
+				jsonObject_main_frm=getLocationInfo(gr_frm_addr);
+				frm_lattitude=getLattitude(jsonObject_main_frm);
+				frm_longitude=getLongitude(jsonObject_main_frm);
+				
+				/* Function call to calculate lattitudes and longitudes for TO address */
+				jsonObject_main_to=getLocationInfo(gr_to_addr);
+				to_lattitude=getLattitude(jsonObject_main_to);
+				to_longitude=getLongitude(jsonObject_main_to);
+											
+				str_date= datePicker.getText().toString();
+				/* Convert time to milliseconds */
+				time = dateTime.getTimeInMillis();
+				/* Insert into RIDEDETAILS table */
+				long id;
+				id= gr_datasource.insertridedetails(str_usrid, gr_frm_addr, gr_to_addr, rad_value, str_date, time, selected_seat, cost_value, frm_lattitude, frm_longitude, to_lattitude, to_longitude);
+				/* Close database object */				
+				gr_datasource.close();
+				
+				/* On inserting Ride Details redirect to choose ride screen or exit */
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PlacesAutoCompleteActivity.this);
+				alertDialogBuilder.setTitle("Ride 'n Divide");
+				alertDialogBuilder
+					.setMessage("Thank you, for giving a ride! Do you want to check other rides?")
+					.setCancelable(false)
+					.setPositiveButton("Check Rides",new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,int id) {
+							Intent reselect = new Intent(PlacesAutoCompleteActivity.this,ChooseRideActivity.class);
+							reselect.putExtra("usrid", str_usrid);
+							startActivity(reselect);
+						}
+					})
+					.setNegativeButton("Exit",new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,int id) {
+							dialog.cancel();
+							PlacesAutoCompleteActivity.this.finish();
+							
+						}
+					});
+	
+				AlertDialog alertDialog = alertDialogBuilder.create();
+				alertDialog.show();	
+		}	
      	  
+  }catch(Exception e)
+  {
+	  Log.e("Places AutoComplete Activity buttonsubmit:", e.toString()); 
+	  }
   }
-   
+		 
   };
-  
-	  
+  	  
   Button.OnClickListener buttonCancelOnClickListener = new Button.OnClickListener(){
 	   @Override
 	   public void onClick(View arg0) {
-		   
-		   AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PlacesAutoCompleteActivity.this);
-			
-			// set title
-			alertDialogBuilder.setTitle("Ride 'n Divide");
-
-			// set dialog message
+		   /* On clicking cancel, code to exit/reset */
+		    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PlacesAutoCompleteActivity.this);
+		    alertDialogBuilder.setTitle("Ride 'n Divide");
 			alertDialogBuilder
 				.setMessage("Are you sure you want to exit?")
 				.setCancelable(false)
 				.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog,int id) {
-						// if this button is clicked, close
-						// current activity
 						PlacesAutoCompleteActivity.this.finish();
 					}
 				  })
 				.setNegativeButton("No",new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog,int id) {
-						// if this button is clicked, just close
-						// the dialog box and do nothing
 						gr_frm_acView.setText("");
 						gr_to_acView.setText("");
 						et_radius.setText("");
@@ -323,40 +313,33 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
 					}
 				});
 
-				// create alert dialog
-				AlertDialog alertDialog = alertDialogBuilder.create();
-
-				// show it
-				alertDialog.show();
-
+			AlertDialog alertDialog = alertDialogBuilder.create();
+			alertDialog.show();
 	   }
-
 	   };
 
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-    	Toast.makeText(PlacesAutoCompleteActivity.this, "onitemclick", Toast.LENGTH_LONG).show();
+    	/* Get selected FROM and TO address from matching list values */
     	if(view == gr_frm_acView){
     		gr_frm_addr = (String) adapterView.getItemAtPosition(position);
-    		Toast.makeText(PlacesAutoCompleteActivity.this, gr_frm_addr, Toast.LENGTH_LONG).show();
+    		
     	}
     	else if(view == gr_to_acView){
     		gr_to_addr = (String) adapterView.getItemAtPosition(position);
-    		Toast.makeText(PlacesAutoCompleteActivity.this, gr_to_addr, Toast.LENGTH_LONG).show();
+    		
     	}
     	}
     
 	 public static JSONObject getLocationInfo(String address) {
 	        StringBuilder stringBuilder = new StringBuilder();
 	        try {
-
+			/* Code to get top 5 matching addresses to populate autocomplete list
+			 by parsing through values in a JSON object	*/
 	        address = address.replaceAll(" ","%20");    
-
-	        HttpPost httppost = new HttpPost("http://maps.google.com/maps/api/geocode/json?address=" + address + "&sensor=false");
+			HttpPost httppost = new HttpPost("http://maps.google.com/maps/api/geocode/json?address=" + address + "&sensor=false");
 	        HttpClient client = new DefaultHttpClient();
 	        HttpResponse response;
 	        stringBuilder = new StringBuilder();
-
-
 	            response = client.execute(httppost);
 	            HttpEntity entity = response.getEntity();
 	            InputStream stream = entity.getContent();
@@ -380,10 +363,9 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
 	    }
 	 
 	 public static double getLattitude(JSONObject jsonObject) {
-
-		 double lattitude=0;
+			double lattitude=0;
 	        try {
-
+				/* Get lattitude from JSON object */
 	            lattitude = ((JSONArray)jsonObject.get("results")).getJSONObject(0)
 	                .getJSONObject("geometry").getJSONObject("location")
 	                .getDouble("lat");
@@ -399,7 +381,7 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
 	 public static double getLongitude(JSONObject jsonObject) {
 		 double longitude=0;
 	        try {
-
+				/* Get longitude from JSON object */
 	            longitude = ((JSONArray)jsonObject.get("results")).getJSONObject(0)
 	                .getJSONObject("geometry").getJSONObject("location")
 	                .getDouble("lng");
@@ -417,7 +399,7 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
 	        switch (id) {
 	        case DIALOG_DATE:
 	            return new DatePickerDialog(this, new OnDateSetListener() {
-	 
+					/* Code to set/get date in a dialog box */
 	                @Override
 	                public void onDateSet(DatePicker view, int year,
 	                        int monthOfYear, int dayOfMonth) {
@@ -431,7 +413,7 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
 	            	             
 	        case DIALOG_TIME:
 	            return new TimePickerDialog(this, new OnTimeSetListener() {
-	 
+					/* Code to set/get time in a dialog box */
 	                @Override
 	                public void onTimeSet(TimePicker view, int hourOfDay,
 	                        int minute) {
@@ -446,8 +428,6 @@ public class PlacesAutoCompleteActivity extends Activity implements OnItemClickL
 	 
 	        }
 	        return null;
-	    }
-    
-    
+	    }        
     }
 	

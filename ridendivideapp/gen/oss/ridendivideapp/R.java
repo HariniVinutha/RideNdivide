@@ -27,7 +27,7 @@ public final class R {
         public static final int LinearLayout1=0x7f080000;
         public static final int ScrollView01=0x7f08003c;
         public static final int TableLayout1=0x7f080028;
-        public static final int TableLayout3=0x7f080032;
+        public static final int TableLayout3=0x7f08002f;
         public static final int TextView01=0x7f08001e;
         public static final int TextView02=0x7f080020;
         public static final int TextView03=0x7f080022;
@@ -36,9 +36,9 @@ public final class R {
         public static final int btn_create_account=0x7f080046;
         public static final int btn_details01=0x7f080027;
         public static final int btn_gr_cancel=0x7f08003b;
-        public static final int btn_gr_datepicker=0x7f080030;
+        public static final int btn_gr_datepicker=0x7f08002d;
         public static final int btn_gr_submit=0x7f08003a;
-        public static final int btn_gr_timepicker=0x7f080031;
+        public static final int btn_gr_timepicker=0x7f08002e;
         public static final int btn_login_cancel=0x7f080044;
         public static final int btn_login_signin=0x7f080043;
         public static final int btn_new_cancel=0x7f08004d;
@@ -62,7 +62,7 @@ public final class R {
         public static final int lbl_fromloc=0x7f080010;
         public static final int lbl_gr_cost=0x7f080036;
         public static final int lbl_gr_from=0x7f080029;
-        public static final int lbl_gr_radius=0x7f08002d;
+        public static final int lbl_gr_radius=0x7f080030;
         public static final int lbl_gr_seats=0x7f080033;
         public static final int lbl_gr_to=0x7f08002b;
         public static final int lbl_login_email=0x7f08003f;
@@ -71,7 +71,7 @@ public final class R {
         public static final int lbl_optionmsg=0x7f080001;
         public static final int lbl_password=0x7f080041;
         public static final int lbl_phno=0x7f08000a;
-        public static final int lbl_radius=0x7f08002f;
+        public static final int lbl_radius=0x7f080032;
         public static final int lbl_seats=0x7f080035;
         public static final int lbl_signupmsg=0x7f08003e;
         public static final int lbl_time=0x7f080019;
@@ -105,7 +105,7 @@ public final class R {
         public static final int txt_from02=0x7f080021;
         public static final int txt_gr_cost=0x7f080038;
         public static final int txt_gr_from=0x7f08002a;
-        public static final int txt_gr_radius=0x7f08002e;
+        public static final int txt_gr_radius=0x7f080031;
         public static final int txt_gr_to=0x7f08002c;
         public static final int txt_login_email=0x7f080040;
         public static final int txt_name=0x7f080047;
@@ -117,17 +117,16 @@ public final class R {
         public static final int txt_tr_to=0x7f080052;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int choose_ride=0x7f030001;
-        public static final int confirm_ride=0x7f030002;
-        public static final int customlist_viewitem=0x7f030003;
-        public static final int frm_item_list=0x7f030004;
-        public static final int give_ride_content=0x7f030005;
-        public static final int listview_main=0x7f030006;
-        public static final int login_screen=0x7f030007;
-        public static final int new_user=0x7f030008;
-        public static final int take_ride_content=0x7f030009;
-        public static final int to_item_list=0x7f03000a;
+        public static final int choose_ride=0x7f030000;
+        public static final int confirm_ride=0x7f030001;
+        public static final int customlist_viewitem=0x7f030002;
+        public static final int frm_item_list=0x7f030003;
+        public static final int give_ride_content=0x7f030004;
+        public static final int listview_main=0x7f030005;
+        public static final int login_screen=0x7f030006;
+        public static final int new_user=0x7f030007;
+        public static final int take_ride_content=0x7f030008;
+        public static final int to_item_list=0x7f030009;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;

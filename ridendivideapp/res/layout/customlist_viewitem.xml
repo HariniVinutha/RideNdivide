@@ -4,18 +4,19 @@
         android:background="@drawable/searchresults"
         xmlns:android="http://schemas.android.com/apk/res/android">
         <TextView android:text="@+id/TextView01" android:id="@+id/txt_email01"
-            android:textSize="18dip"
+             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
         <TextView android:text="@+id/TextView02" android:id="@+id/txt_from02"
-            android:textSize="18dip"
+             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
         <TextView android:text="@+id/TextView03" android:id="@+id/txt_to03"
-            android:textSize="18dip"
+              android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
         <TextView android:text="@+id/TextView04" android:id="@+id/txt_dist04"
-            android:textSize="18dip"
+              android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
         <Button android:text="@+id/Button01" android:id="@+id/btn_details01"
-            android:layout_marginLeft="120dip"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>       
+            android:layout_marginLeft="120dip" style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+                     
     </LinearLayout>
