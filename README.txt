@@ -76,21 +76,29 @@ https://github.com/HariniVinutha/RideNdivide/blob/master/User_Manual.pdf
 REFERENCE/CREDITS
 -----------------
 
-Date and Time
-http://android.vexedlogic.com/2011/07/16/android-date-time-setting-dialog/
-
-Creating dynamic customized list view
+Dynamic customized list view
 http://about-android.blogspot.com/2010/04/creating-dynamic-customized-list-view.html
-http://www.google.com/intl/en/policies/terms/
+License - http://www.google.com/intl/en/policies/terms/
 
 DB ADapter
-Copyright 2012 QuinStreet Inc. All Rights Reserved.Reprinted with permission.
-http://www.devx.com/licensing
+http://www.devx.com/wireless/Article/40842/1954
+License - http://www.devx.com/licensing
 
 Google places API
-https://developers.google.com/readme/terms
-http://www.google.com/intl/en/policies/terms/
+https://developers.google.com/places/documentation/
+License - https://developers.google.com/readme/terms, http://www.google.com/intl/en/policies/terms/
 
 Lattitude and Longitude
 http://stackoverflow.com/questions/3574644/how-can-i-find-the-latitude-and-longitude-from-address
-http://stackexchange.com/legal
+License - http://stackexchange.com/legal
+
+Auto Complete API
+https://developers.google.com/academy/apis/maps/places/autocomplete-android
+License - https://developers.google.com/readme/terms, http://www.google.com/intl/en/policies/terms/
+
+Date and Time
+http://android.vexedlogic.com/2011/07/16/android-date-time-setting-dialog/
+
+Clipart
+http://misc.phillipmartin.info/misc_carpool_01.htm
+License - http://www.phillipmartin.info/clipart/homepage2.htm
