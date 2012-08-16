@@ -1,10 +1,46 @@
+
+<!--*********************************************************************************************************
+**
+** RidenDivide- An open source project for the Android platform, helps users to carpool
+** Application written in Java
+** Application uses Google Places API
+** 
+** Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+**
+** Please see the file License in this distribution for license terms. 
+** Below is the link to the file License.
+** https://github.com/HariniVinutha/RideNdivide/blob/master/License
+**
+** Following is the link for the repository- https://github.com/HariniVinutha/RideNdivide
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**  
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+** 
+** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
+** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
+** 
+** References - http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
+**
+*********************************************************************************************************-->
+
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundscreen"
     android:gravity="fill" >
 
-     <TableRow
+    <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,36 +56,35 @@
         android:id="@+id/tableRow2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="2dip" >       
-     <TextView
-        android:layout_column="1" 
-        android:layout_width="20dip"/>               
-     <TextView         
-        android:layout_column="2"
-        android:id="@+id/lbl_name"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:textSize="20dip" />
-
-     <TextView         
-        android:layout_column="3"
-        android:id="@+id/lbl_displayname"
-        android:text="Text to be displayed"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="20dip" />
+        android:layout_margin="2dip" >  
+		
+		<TextView
+			android:layout_column="1" 
+			android:layout_width="20dip"/>               
      
-      <TextView
-         android:layout_column="4" 
-         android:layout_width="20dip"/>   
+		<TextView         
+			android:layout_column="2"
+			android:id="@+id/lbl_name"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:text="Name"
+			android:textStyle="bold"
+			android:textColor="#000000"
+			android:textSize="20dip" />
+
+		<TextView         
+			android:layout_column="3"
+			android:id="@+id/lbl_displayname"
+			android:text="Text to be displayed"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textSize="20dip" />
+     
+		<TextView
+			android:layout_column="4" 
+			android:layout_width="20dip"/>   
     </TableRow>
-
-
-
 
     <TableRow
         android:id="@+id/tableRow3"
@@ -57,63 +92,70 @@
         android:layout_height="wrap_content" 
         android:layout_margin="2dip" >
 
-     <TextView
-        android:layout_column="1" 
-        android:layout_width="20dip"/>               
+		<TextView
+			android:layout_column="1" 
+			android:layout_width="20dip"/>               
 
-     <TextView
-         android:id="@+id/lbl_phno"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_column="2"
-         android:text="Phone No"
-         android:textStyle="bold"
-         android:textColor="#000000"
-         android:textSize="20dip" />
+		<TextView
+			android:id="@+id/lbl_phno"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_column="2"
+			android:text="Phone No"
+			android:textStyle="bold"
+			android:textColor="#000000"
+			android:textSize="20dip" />
 
-     <TextView         
-        android:layout_column="3"
-        android:id="@+id/lbl_displayphno"
-        android:text="Text to be displayed"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="20dip" /> 
-      <TextView
-         android:layout_column="4" 
-         android:layout_width="20dip"/> 
+		<TextView         
+			android:layout_column="3"
+			android:id="@+id/lbl_displayphno"
+			android:text="Text to be displayed"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textSize="20dip" /> 
+			
+		<TextView
+			android:layout_column="4" 
+			android:layout_width="20dip"/> 
+			
     </TableRow>
     
-     <TableRow
+    <TableRow
         android:id="@+id/tableRow4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:layout_margin="2dip" >
-     <TextView
-        android:layout_column="1" 
-        android:layout_width="20dip"/>               
-     <TextView         
-        android:layout_column="2"
-        android:id="@+id/lbl_email"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:text="Email Id"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:textSize="20dip" />
+     
+		<TextView
+			android:layout_column="1" 
+			android:layout_width="20dip"/>   
+		
+		<TextView         
+			android:layout_column="2"
+			android:id="@+id/lbl_email"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:text="Email Id"
+			android:textStyle="bold"
+			android:textColor="#000000"
+			android:textSize="20dip" />
 
-     <TextView         
-        android:layout_column="3"
-        android:text="Text to be displayed"
-        android:id="@+id/lbl_displayemail"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="20dip" /> 
-      <TextView
-         android:layout_column="4" 
-         android:layout_width="20dip"/> 
+		<TextView         
+			android:layout_column="3"
+			android:text="Text to be displayed"
+			android:id="@+id/lbl_displayemail"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textSize="20dip" /> 
+			
+		<TextView
+			android:layout_column="4" 
+			android:layout_width="20dip"/> 
+			
     </TableRow>
+	
     <TableRow
         android:id="@+id/tableRow5"
         android:layout_width="wrap_content"
@@ -134,7 +176,7 @@
             android:textColor="#000000"
             android:textSize="20dip" />
 
-       <TextView
+        <TextView
             android:id="@+id/lbl_displayfromloc"
             android:layout_width="170dip"
             android:layout_height="wrap_content"
@@ -143,10 +185,10 @@
             android:textColor="#000000"
             android:textSize="20dip" />
 
-
         <TextView
             android:layout_width="20dip"
             android:layout_column="4" />
+			
     </TableRow>
 
     <TableRow
@@ -169,7 +211,7 @@
             android:textColor="#000000"
             android:textSize="20dip" />
 
-       <TextView
+        <TextView
             android:id="@+id/lbl_displaytoloc"
             android:layout_width="170dip"
             android:layout_height="wrap_content"
@@ -181,9 +223,10 @@
         <TextView
             android:layout_width="20dip"
             android:layout_column="4" />
+			
     </TableRow>
      
-     <TableRow
+    <TableRow
         android:id="@+id/tableRow7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -203,7 +246,7 @@
             android:textColor="#000000"
             android:textSize="20dip" />
 
-       <TextView
+        <TextView
             android:id="@+id/lbl_displaydate"
             android:layout_width="170dip"
             android:layout_height="wrap_content"
@@ -215,7 +258,9 @@
         <TextView
             android:layout_width="20dip"
             android:layout_column="4" />
+			
     </TableRow>
+	
     <TableRow
         android:id="@+id/tableRow8"
         android:layout_width="wrap_content"
@@ -236,7 +281,7 @@
             android:textColor="#000000"
             android:textSize="20dip" />
 
-       <TextView
+        <TextView
             android:id="@+id/lbl_displaytime"
             android:layout_width="170dip"
             android:layout_height="wrap_content"
@@ -248,27 +293,30 @@
         <TextView
             android:layout_width="20dip"
             android:layout_column="4" />
+			
     </TableRow>
-     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-         android:id="@+id/relativeLayout1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content" >
-      <Button
-        android:id="@+id/btn_accept"
+	
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:layout_below="@+id/tableRow6"
-        android:layout_marginLeft="100dip"
-        android:layout_marginTop="30dip" 
-        android:text="Accept"/> 
-        
+        android:layout_height="wrap_content" >
+      
+		<Button
+			android:id="@+id/btn_accept"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:layout_below="@+id/tableRow6"
+			android:layout_marginLeft="100dip"
+			android:layout_marginTop="30dip" 
+			android:text="Accept"/>         
               
-    <Button
-        android:id="@+id/btn_reject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/btn_accept"
-        android:layout_marginTop="30dip" 
-        android:text="Reject" />  
+		<Button
+			android:id="@+id/btn_reject"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/btn_accept"
+			android:layout_marginTop="30dip" 
+			android:text="Reject" />  
      </RelativeLayout>
-    </TableLayout> 
+	 
+</TableLayout> 

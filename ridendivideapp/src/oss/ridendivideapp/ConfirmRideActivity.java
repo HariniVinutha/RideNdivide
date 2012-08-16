@@ -29,6 +29,9 @@
 ** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
 ** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
 **
+** References - http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
+**
 *********************************************************************************************************/
 package oss.ridendivideapp;
 

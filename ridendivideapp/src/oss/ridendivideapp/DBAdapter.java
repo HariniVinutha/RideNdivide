@@ -30,7 +30,9 @@
 ** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
 ** 
 ** References - http://www.devx.com/wireless/Article/40842/1954
-** Licensing : http://www.devx.com/licensing
+** License - http://www.devx.com/licensing
+** http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
 **
 *********************************************************************************************************/
 

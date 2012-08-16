@@ -34,6 +34,10 @@
 ** License- http://stackexchange.com/legal
 ** https://developers.google.com/academy/apis/maps/places/autocomplete-android
 ** License- https://developers.google.com/readme/terms, http://www.google.com/intl/en/policies/terms/
+** https://developers.google.com/places/documentation/
+** License - https://developers.google.com/readme/terms, http://www.google.com/intl/en/policies/terms/
+** http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
 **
 *********************************************************************************************************/
 package oss.ridendivideapp;

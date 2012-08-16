@@ -1,3 +1,39 @@
+
+<!--*********************************************************************************************************
+**
+** RidenDivide- An open source project for the Android platform, helps users to carpool
+** Application written in Java
+** Application uses Google Places API
+** 
+** Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+**
+** Please see the file License in this distribution for license terms. 
+** Below is the link to the file License.
+** https://github.com/HariniVinutha/RideNdivide/blob/master/License
+**
+** Following is the link for the repository- https://github.com/HariniVinutha/RideNdivide
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**  
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+** 
+** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
+** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
+**
+** References - http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
+** 
+*********************************************************************************************************-->
+
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -38,7 +74,7 @@
             android:textColor="#000000"
             android:textSize="20dip" />
 
-           <AutoCompleteTextView
+        <AutoCompleteTextView
             android:id="@+id/txt_gr_from"
             android:layout_width="215dip"
             android:layout_height="wrap_content"
@@ -46,7 +82,9 @@
             android:maxLength="100"
             android:textColor="#000000"
             android:singleLine="true"
-            android:textSize="18sp">  <requestFocus/> </AutoCompleteTextView> 
+            android:textSize="18sp">
+			<requestFocus/> 
+		</AutoCompleteTextView> 
           
         <TextView
             android:layout_width="20dip"
@@ -89,58 +127,59 @@
     </TableRow>
     
     
- <RelativeLayout
+	<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/relativeLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
         
-<Button android:id="@+id/btn_gr_datepicker"
-    android:text="07/16/2012"
-	android:layout_width="135dip"
-    android:layout_height="50dp"
-    android:layout_below="@+id/tableRow7"
-    android:layout_marginLeft="15dip"
-    android:layout_marginTop="10dip" />
+		<Button android:id="@+id/btn_gr_datepicker"
+			android:text="07/16/2012"
+			android:layout_width="135dip"
+			android:layout_height="50dp"
+			android:layout_below="@+id/tableRow7"
+			android:layout_marginLeft="15dip"
+			android:layout_marginTop="10dip" />
 
-<Button
-    android:id="@+id/btn_gr_timepicker"
-    android:layout_width="150dip"
-     android:layout_height="50dip"
-    android:layout_marginLeft="5dip"
-    android:layout_marginRight="15dip"
-    android:layout_marginTop="10dip"
-    android:layout_toRightOf="@+id/btn_gr_datepicker"
-    android:text="11:22 AM" />
+		<Button
+			android:id="@+id/btn_gr_timepicker"
+			android:layout_width="150dip"
+			android:layout_height="50dip"
+			android:layout_marginLeft="5dip"
+			android:layout_marginRight="15dip"
+			android:layout_marginTop="10dip"
+			android:layout_toRightOf="@+id/btn_gr_datepicker"
+			android:text="11:22 AM" />
 
-</RelativeLayout>
-        <TableLayout
+	</RelativeLayout>
+        
+	<TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/TableLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-             <TableRow
-        android:id="@+id/tableRow7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dip" >
+        <TableRow
+			android:id="@+id/tableRow7"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="2dip" >
 
-        <TextView
-            android:layout_width="20dip"
-            android:layout_column="1" />
+			<TextView
+				android:layout_width="20dip"
+				android:layout_column="1" />
 
-        <TextView
-            android:id="@+id/lbl_gr_radius"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_marginTop="5dip"
-            android:text="Radius"
-            android:textColor="#000000"
-            android:textSize="20dip" />
+			<TextView
+				android:id="@+id/lbl_gr_radius"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_column="2"
+				android:layout_marginTop="5dip"
+				android:text="Radius"
+				android:textColor="#000000"
+				android:textSize="20dip" />
 
-        <EditText
+			<EditText
                 android:id="@+id/txt_gr_radius"
                 android:layout_width="60dip"
                 android:layout_height="wrap_content"
@@ -150,69 +189,70 @@
                 android:layout_marginTop="5dip"
                 android:singleLine="true"
                 android:layout_toRightOf="@+id/lbl_radius"/>
-         <TextView
-            android:layout_width="30dip"
-            android:layout_marginTop="5dip"
-            android:text=" miles"
-            android:layout_column="4" 
-            android:textColor="#000000"
-            android:textSize="20dip" />
+         
+			<TextView
+				android:layout_width="30dip"
+				android:layout_marginTop="5dip"
+				android:text=" miles"
+				android:layout_column="4" 
+				android:textColor="#000000"
+				android:textSize="20dip" />
         
-    </TableRow>
+		</TableRow>
 
-        <TableRow
-            android:id="@+id/tableRow6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dip"
-            android:layout_marginTop="10dip"
-            android:layout_marginLeft="2dip" >
+		<TableRow
+			android:id="@+id/tableRow6"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="2dip"
+			android:layout_marginTop="10dip"
+			android:layout_marginLeft="2dip" >
 
-            <TextView
-                android:id="@+id/lbl_gr_seats"
-                android:layout_width="60dip"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_marginLeft="10dip"
-                android:text="Seats"
-                android:layout_marginTop="10dip"
-                android:textColor="#000000"
-                android:textSize="20dip" />
+			<TextView
+				android:id="@+id/lbl_gr_seats"
+				android:layout_width="60dip"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:layout_marginLeft="10dip"
+				android:text="Seats"
+				android:layout_marginTop="10dip"
+				android:textColor="#000000"
+				android:textSize="20dip" />
 
 
-            <Spinner
-                android:id="@+id/spn_gr_seats"
-                android:layout_width="90dip"
-                android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:layout_marginTop="10dip"
-                android:layout_toRightOf="@+id/lbl_seats"
-                tools:listitem="@android:layout/simple_spinner_item" />
+			<Spinner
+				android:id="@+id/spn_gr_seats"
+				android:layout_width="90dip"
+				android:layout_height="wrap_content"
+				android:layout_column="2"
+				android:layout_marginTop="10dip"
+				android:layout_toRightOf="@+id/lbl_seats"
+				tools:listitem="@android:layout/simple_spinner_item" />
 
-            <TextView
-                android:id="@+id/lbl_gr_cost"
-                android:layout_width="60dip"
-                android:layout_height="wrap_content"
-                android:layout_column="3"
-                android:layout_toRightOf="@+id/spn_seats"
-                android:text="Cost$"
-                android:layout_marginTop="10dip"
-                android:textColor="#000000"
-                android:textSize="20dip" />
+			<TextView
+				android:id="@+id/lbl_gr_cost"
+				android:layout_width="60dip"
+				android:layout_height="wrap_content"
+				android:layout_column="3"
+				android:layout_toRightOf="@+id/spn_seats"
+				android:text="Cost$"
+				android:layout_marginTop="10dip"
+				android:textColor="#000000"
+				android:textSize="20dip" />
             
-
-            <EditText
-                android:id="@+id/txt_gr_cost"
-                android:layout_width="70dip"
-                android:layout_height="wrap_content"
-                android:layout_column="4"
-                android:layout_marginTop="10dip"
-                android:layout_toRightOf="@+id/lbl_gr_cost"
-                android:singleLine="true"
-                android:maxLength="7"
-                android:inputType="number|numberDecimal" />
+			<EditText
+				android:id="@+id/txt_gr_cost"
+				android:layout_width="70dip"
+				android:layout_height="wrap_content"
+				android:layout_column="4"
+				android:layout_marginTop="10dip"
+				android:layout_toRightOf="@+id/lbl_gr_cost"
+				android:singleLine="true"
+				android:maxLength="7"
+				android:inputType="number|numberDecimal" />
                      
-        </TableRow>
+		</TableRow>
+		
     </TableLayout>
 
     <RelativeLayout
@@ -237,6 +277,7 @@
             android:layout_marginTop="10dip"
             android:layout_toRightOf="@+id/btn_gr_submit"
             android:text=" Cancel " />
+			
     </RelativeLayout>
 
 </TableLayout>

@@ -19,7 +19,9 @@ For feedback please mail at harini.ramki@gmail.com/mail2vintu@gmail.com
 
 ****************************************************************************************************
 
-**PROJECT DESCRIPTION**
+
+PROJECT DESCRIPTION
+-------------------
 
 Ride N Divide is an android application that facilitates carpooling. This acts as a platform for people with similar commute plans 
 to collaborate and share a ride. Carpool hosts can post their commute plans. It allows passengers looking for rides to sift through 
@@ -27,10 +29,12 @@ posted commute plans and choose the one that suits them the best. Passengers can
 to discuss and confirm ride details. Why not use it, when it can save your time, money and of course the planet Earth! 
 
 
--Application is written in Java
+-Application developed using Android 3.2 API level 13 in addition to Google APIs level 13.
 -Application uses Autocomplete API and Places API, Powered by GOOGLE.
 
-**FUTURE ENHANCEMENTS**
+
+FUTURE ENHANCEMENTS
+-------------------
 
 Currently the application uses a local SQLite database as a backend. In future, we plan to set up a remote server for the database. 
 
@@ -44,33 +48,38 @@ We are also looking to provide an option to log Periodic/Repetitive commute plan
 Further more, the application shall support other modes of communication such as chat and email.
 
 
-**COPYRIGHT INFORMATION**
+COPYRIGHT INFORMATION
+---------------------
 
 Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
 Harini Ramakrishnan <harini.ramki@gmail.com> and 
 Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
 
 
-**LICENSE INFORMATION**
+LICENSE INFORMATION
+---------------------
 
 Please see the file License in this distribution for license terms. Below is the link to the file License.
 https://github.com/?????????????????????//
 
 
-**REPOSITORY LOCATION**
+REPOSITORY LOCATION
+-------------------
 
 Following is the link for the repository
 https://github.com/ ???????????????????????
 
 
-**BUILD/INSTALL INSTRUCTIONS**
+BUILD/INSTALL INSTRUCTIONS
+--------------------------
 
 Please read instructions from the following file
 https://github.com/ Developer_Docs??????????????????????
 https://github.com/ User_Docs.txt ??????????????????????
 
 
-**REFERENCE/CREDITS**
+REFERENCE/CREDITS
+-----------------
 
 Date and Time
 http://android.vexedlogic.com/2011/07/16/android-date-time-setting-dialog/
@@ -97,3 +106,4 @@ This program is free software: you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+

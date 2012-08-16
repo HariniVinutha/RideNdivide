@@ -31,6 +31,8 @@
 ** 
 ** References - http://about-android.blogspot.com/2010/04/creating-dynamic-customized-list-view.html
 ** License - http://www.google.com/intl/en/policies/terms/
+** http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
 **
 *********************************************************************************************************/
 package oss.ridendivideapp;

@@ -1,3 +1,39 @@
+
+<!-- *********************************************************************************************************
+**
+** RidenDivide- An open source project for the Android platform, helps users to carpool
+** Application written in Java
+** Application uses Google Places API
+** 
+** Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+**
+** Please see the file License in this distribution for license terms. 
+** Below is the link to the file License.
+** https://github.com/HariniVinutha/RideNdivide/blob/master/License
+**
+** Following is the link for the repository- https://github.com/HariniVinutha/RideNdivide
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**  
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+** 
+** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
+** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
+**
+** References - http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
+**
+*********************************************************************************************************-->
+
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -16,47 +52,43 @@
         android:layout_marginBottom="30dip"
         android:text="Welcome to RideNDivide"
         android:textColor="#000000"
-        android:textSize="21dip" />
-        
+        android:textSize="21dip" />        
 
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="2dip" >       
-     <TextView
-        android:layout_column="1" 
-        android:layout_width="20dip"/>               
-     <TextView         
-        android:layout_column="2"
-        android:id="@+id/lbl_name"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textColor="#000000"
-        android:textSize="20dip" />
+     
+		<TextView
+			android:layout_column="1" 
+			android:layout_width="20dip"/>   
+		
+		<TextView         
+			android:layout_column="2"
+			android:id="@+id/lbl_name"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:text="Name"
+			android:textColor="#000000"
+			android:textSize="20dip" />
 
-
-
-
-     <EditText
-         android:id="@+id/txt_name"
-         android:layout_width="180dip"
-         android:layout_height="wrap_content"
-         android:inputType="textPersonName"
-         android:maxLength="48"
-         android:singleLine="true"
-         android:textSize="18sp" >
-
-<requestFocus />
-     </EditText> 
+		<EditText
+			android:id="@+id/txt_name"
+			android:layout_width="180dip"
+			android:layout_height="wrap_content"
+			android:inputType="textPersonName"
+			android:maxLength="48"
+			android:singleLine="true"
+			android:textSize="18sp" >
+			<requestFocus />
+		</EditText> 
+		
       <TextView
          android:layout_column="4" 
          android:layout_width="20dip"/>   
+		 
     </TableRow>
-
-
-
 
     <TableRow
         android:id="@+id/tableRow3"
@@ -64,129 +96,128 @@
         android:layout_height="wrap_content" 
         android:layout_margin="2dip" >
 
-     <TextView
-        android:layout_column="1" 
-        android:layout_width="20dip"/>               
+		<TextView
+			android:layout_column="1" 
+			android:layout_width="20dip"/>               
 
-     <TextView
-         android:id="@+id/lbl_phno"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_column="2"
-         android:text="Phone No"
-         android:textColor="#000000"
-         android:textSize="20dip" />
+		<TextView
+			android:id="@+id/lbl_phno"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_column="2"
+			android:text="Phone No"
+			android:textColor="#000000"
+			android:textSize="20dip" />
 
-
-
-     <EditText
-         android:id="@+id/txt_phno"
-         android:layout_width="180dip"
-         android:layout_height="wrap_content"
-         android:maxLength="11"
-         android:inputType="phone"
-         android:singleLine="true"
-         android:textSize="18sp" >
-
-     </EditText> 
+		<EditText
+			android:id="@+id/txt_phno"
+			android:layout_width="180dip"
+			android:layout_height="wrap_content"
+			android:maxLength="11"
+			android:inputType="phone"
+			android:singleLine="true"
+			android:textSize="18sp" >
+		</EditText> 
+		
       <TextView
          android:layout_column="4" 
-         android:layout_width="20dip"/> 
+         android:layout_width="20dip"/>
+		 
     </TableRow>
     
-     <TableRow
+    <TableRow
         android:id="@+id/tableRow4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:layout_margin="2dip" >
-     <TextView
-        android:layout_column="1" 
-        android:layout_width="20dip"/>               
-     <TextView         
-        android:layout_column="2"
-        android:id="@+id/lbl_email"
-        android:layout_width="100dip"
-        android:layout_height="wrap_content"
-        android:text="Email Id"
-        android:textColor="#000000"
-        android:textSize="20dip" />
-
-
-     <EditText
-         android:id="@+id/txt_email"
-         android:layout_width="180dip"
-         android:layout_height="wrap_content"
-         android:inputType="textEmailAddress"
-         android:maxLength="48"
-         android:singleLine="true"
-         android:textSize="18sp" >
-
-     </EditText> 
-      <TextView
-         android:layout_column="4" 
-         android:layout_width="20dip"/> 
+		
+		<TextView
+			android:layout_column="1" 
+			android:layout_width="20dip"/>               
+     
+		<TextView         
+			android:layout_column="2"
+			android:id="@+id/lbl_email"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:text="Email Id"
+			android:textColor="#000000"
+			android:textSize="20dip" />
+			
+		<EditText
+			android:id="@+id/txt_email"
+			android:layout_width="180dip"
+			android:layout_height="wrap_content"
+			android:inputType="textEmailAddress"
+			android:maxLength="48"
+			android:singleLine="true"
+			android:textSize="18sp" >
+		</EditText> 
+		
+		<TextView
+			android:layout_column="4" 
+			android:layout_width="20dip"/> 
+			
     </TableRow>
     
-     <TableRow
+    <TableRow
         android:id="@+id/tableRow5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:layout_margin="2dip" >
+		
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_column="1" />               
 
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_column="1" />
-               
+		<TextView
+			android:id="@+id/lbl_nu_password"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_column="2"
+			android:text="Password"
+			android:textColor="#000000"
+			android:textSize="20dip" />
 
-     <TextView
-         android:id="@+id/lbl_nu_password"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_column="2"
-         android:text="Password"
-         android:textColor="#000000"
-         android:textSize="20dip" />
-
-
-
-     <EditText
-         android:id="@+id/txt_nu_password"
-         android:layout_width="180dip"
-         android:layout_height="wrap_content"
-         android:inputType="textPassword"
-         android:maxLength="48"
-         android:singleLine="true"
-         android:textSize="18sp" >
-
-     </EditText> 
-      <TextView
-         android:layout_column="4" 
-         android:layout_width="20dip"/> 
-    </TableRow>
+		<EditText
+			android:id="@+id/txt_nu_password"
+			android:layout_width="180dip"
+			android:layout_height="wrap_content"
+			android:inputType="textPassword"
+			android:maxLength="48"
+			android:singleLine="true"
+			android:textSize="18sp" >
+		</EditText> 
+	 
+		<TextView
+			android:layout_column="4" 
+			android:layout_width="20dip"/> 
+			
+	</TableRow>
     
    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
          android:id="@+id/relativeLayout1"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content" >
-      <Button
-        android:id="@+id/btn_new_signin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:layout_below="@+id/tableRow5"
-        android:layout_marginLeft="90dip"
-        android:layout_marginTop="20dip" 
-        android:text="Sign In"/> 
-        
+		 
+		<Button
+			android:id="@+id/btn_new_signin"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:layout_below="@+id/tableRow5"
+			android:layout_marginLeft="90dip"
+			android:layout_marginTop="20dip" 
+			android:text="Sign In"/>         
               
-    <Button
-        android:id="@+id/btn_new_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/btn_signup"
-        android:layout_marginLeft="160dip"
-        android:layout_marginTop="20dip" 
-        android:text=" Cancel " />  
-     </RelativeLayout>
+		<Button
+			android:id="@+id/btn_new_cancel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/btn_signup"
+			android:layout_marginLeft="160dip"
+			android:layout_marginTop="20dip" 
+			android:text=" Cancel " />  
+    </RelativeLayout>
 
 </TableLayout>
 

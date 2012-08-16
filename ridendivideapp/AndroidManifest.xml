@@ -1,3 +1,39 @@
+
+<!--*********************************************************************************************************
+**
+** RidenDivide- An open source project for the Android platform, helps users to carpool
+** Application written in Java
+** Application uses Google Places API
+** 
+** Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+**
+** Please see the file License in this distribution for license terms. 
+** Below is the link to the file License.
+** https://github.com/HariniVinutha/RideNdivide/blob/master/License
+**
+** Following is the link for the repository- https://github.com/HariniVinutha/RideNdivide
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**  
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+** 
+** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
+** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
+**
+** References - http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
+** 
+*********************************************************************************************************-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="oss.ridendivideapp"
     android:versionCode="1"

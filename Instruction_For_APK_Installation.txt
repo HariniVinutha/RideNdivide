@@ -1,0 +1,44 @@
+﻿****************************************************************************************************
+
+Copyright(C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+
+It is a free document. You can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This document is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+For feedback please mail at harini.ramki@gmail.com/mail2vintu@gmail.com
+
+****************************************************************************************************
+
+Installing the Android Application through Application APKInstaller
+
+    Step 1.Download application APKInstaller and install it by clicking the file called "install.bat".
+
+    Step 2.Once installed, plug the Android phone to a computer.
+
+    Step 3.Double Click APK file- "ridendivideapp.apk" on the computer you want to install the Android phone.
+
+Installing the Android SDK Android Application
+
+    Step1. Download and install the Android SDK and Android programs USB Driver on a computer. 
+
+    Step2. Change settings on an Android phone to allow installation of applications from other resources. 
+	   In menu "Settings" in  the Android phone select "Application Settings" and enable "Unknown Sources." 
+           Then in the menu "Settings" select "SD Card" and "Phone Storage" and activate "Disable Use for USB Storage".
+
+    Step3. Open the Windows Command Prompt and type "adb install path\filename.apk".
+
+    Done, now the application is installed on the Android phone and is ready to use.
+
+
+For More Detailed Information, Please Refer
+    http://www.talkandroid.com/guides/install-apk-files-on-android/

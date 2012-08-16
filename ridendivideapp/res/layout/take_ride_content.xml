@@ -1,3 +1,39 @@
+
+<!-- *********************************************************************************************************
+**
+** RidenDivide- An open source project for the Android platform, helps users to carpool
+** Application written in Java
+** Application uses Google Places API
+** 
+** Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
+**
+** Please see the file License in this distribution for license terms. 
+** Below is the link to the file License.
+** https://github.com/HariniVinutha/RideNdivide/blob/master/License
+**
+** Following is the link for the repository- https://github.com/HariniVinutha/RideNdivide
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**  
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+** 
+** You should have received a copy of the GNU General Public License
+** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+** 
+** Written by Harini Ramakrishnan <harini.ramki@gmail.com> and 
+** Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
+**
+** References - http://misc.phillipmartin.info/misc_carpool_01.htm
+** License - http://www.phillipmartin.info/clipart/homepage2.htm
+**
+*********************************************************************************************************-->
+
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -45,10 +81,13 @@
             android:maxLength="100"
             android:textColor="#000000"
             android:singleLine="true"
-            android:textSize="18sp">  <requestFocus/> </AutoCompleteTextView>       
+            android:textSize="18sp">  
+			<requestFocus/>
+		</AutoCompleteTextView>       
         <TextView
             android:layout_width="30dip"
             android:layout_column="4" />
+			
     </TableRow>
 
     <TableRow
@@ -68,9 +107,8 @@
             android:layout_column="2"
             android:text="To"
             android:textColor="#000000"
-            android:textSize="20dip" />
-
-          <AutoCompleteTextView
+            android:textSize="20dip" />
+        <AutoCompleteTextView
             android:id="@+id/txt_tr_to"
             android:layout_width="215dip"
             android:layout_height="wrap_content"
@@ -78,115 +116,112 @@
             android:maxLength="100"
             android:textColor="#000000"
             android:singleLine="true"
-            android:textSize="18sp"> </AutoCompleteTextView> 
+            android:textSize="18sp"> 
+		</AutoCompleteTextView> 
 
         <TextView
             android:layout_width="30dip"
             android:layout_column="4" />
-    </TableRow>
-     
+    </TableRow>     
        
-     <RelativeLayout
+    <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/relativeLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
         
-<Button android:id="@+id/btn_tr_datepicker"
-    android:text="07/16/2012"
-	android:layout_width="135dip"
-    android:layout_height="50dp"
-    android:layout_below="@+id/tableRow7"
-    android:layout_marginLeft="15dip"
-    android:layout_marginTop="10dip" />
+		<Button android:id="@+id/btn_tr_datepicker"
+			android:text="07/16/2012"
+			android:layout_width="135dip"
+			android:layout_height="50dp"
+			android:layout_below="@+id/tableRow7"
+			android:layout_marginLeft="15dip"
+			android:layout_marginTop="10dip" />
+			
+		<Button
+			android:id="@+id/btn_tr_timepicker"
+			android:layout_width="150dip"
+			android:layout_height="50dip"
+			android:layout_marginLeft="5dip"
+			android:layout_marginRight="15dip"
+			android:layout_marginTop="10dip"
+			android:layout_toRightOf="@+id/btn_tr_datepicker"
+			android:text="11:22 AM" />
+			
+	</RelativeLayout>
 
+	<TableLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/TableLayout3"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" >
 
-<Button
-    android:id="@+id/btn_tr_timepicker"
-    android:layout_width="150dip"
-     android:layout_height="50dip"
-    android:layout_marginLeft="5dip"
-    android:layout_marginRight="15dip"
-    android:layout_marginTop="10dip"
-    android:layout_toRightOf="@+id/btn_tr_datepicker"
-    android:text="11:22 AM" />
+		<TableRow
+			android:id="@+id/tableRow5"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="2dip">
 
-</RelativeLayout>
-
-
-    <TableLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/TableLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-         <TableRow
-        android:id="@+id/tableRow5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:layout_margin="2dip">
-
-        <TextView
-            android:layout_width="15dip"
-            android:layout_column="1" />
+		<TextView
+			android:layout_width="15dip"
+			android:layout_column="1" />
         
-        <TextView
-            android:id="@+id/lbl_tr_flexible"
-            android:layout_width="120dip"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:text="Flexible Mins"
-            android:layout_marginTop="10dip"
-            android:textColor="#000000"
-            android:textSize="20dip" />
+		<TextView
+			android:id="@+id/lbl_tr_flexible"
+			android:layout_width="120dip"
+			android:layout_height="wrap_content"
+			android:layout_column="2"
+			android:text="Flexible Mins"
+			android:layout_marginTop="10dip"
+			android:textColor="#000000"
+			android:textSize="20dip" />
 
-            <Spinner
-                android:id="@+id/spn_tr_flexhrs"
-                android:layout_width="155dip"
-                android:layout_height="wrap_content"
-                android:layout_column="3"
-                tools:listitem="@android:layout/simple_spinner_item"
-                android:layout_marginTop="10dip" />
-                
-        
-           <TextView
-            android:layout_width="30dip"
-            android:layout_column="4" />
-    </TableRow>       
+		<Spinner
+			android:id="@+id/spn_tr_flexhrs"
+			android:layout_width="155dip"
+			android:layout_height="wrap_content"
+			android:layout_column="3"
+			tools:listitem="@android:layout/simple_spinner_item"
+			android:layout_marginTop="10dip" />
+               
+		<TextView
+			android:layout_width="30dip"
+			android:layout_column="4" />
+	</TableRow>       
          
-         <TableRow
-        android:id="@+id/tableRow4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dip" >
+	<TableRow
+		android:id="@+id/tableRow4"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="2dip" >
 
-        <TextView
-            android:layout_width="20dip"
-            android:layout_column="1" />
-        
-        <TextView
-            android:id="@+id/lbl_tr_seats"
-            android:layout_width="100dip"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:text="Seats"
-            android:layout_marginTop="10dip"
-            android:textColor="#000000"
-            android:textSize="20dip" />
+		<TextView
+			android:layout_width="20dip"
+			android:layout_column="1" />
+       
+		<TextView
+			android:id="@+id/lbl_tr_seats"
+			android:layout_width="100dip"
+			android:layout_height="wrap_content"
+			android:layout_column="2"
+			android:text="Seats"
+			android:layout_marginTop="10dip"
+			android:textColor="#000000"
+			android:textSize="20dip" />
 
-            <Spinner
-                android:id="@+id/spn_tr_seats"
-                android:layout_width="155dip"
-                android:layout_height="wrap_content"
-                android:layout_column="3"
-                android:layout_marginTop="10dip"
-                tools:listitem="@android:layout/simple_spinner_item" />
-                
+		<Spinner
+			android:id="@+id/spn_tr_seats"
+			android:layout_width="155dip"
+			android:layout_height="wrap_content"
+			android:layout_column="3"
+			android:layout_marginTop="10dip"
+			tools:listitem="@android:layout/simple_spinner_item" />   
         
-           <TextView
-            android:layout_width="20dip"
-            android:layout_column="4" />
-    </TableRow>       
+		<TextView
+			android:layout_width="20dip"
+			android:layout_column="4" />
+		</TableRow>  
+		
     </TableLayout>
 
     <RelativeLayout
