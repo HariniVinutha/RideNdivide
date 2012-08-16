@@ -48,34 +48,29 @@ We are also looking to provide an option to log Periodic/Repetitive commute plan
 Further more, the application shall support other modes of communication such as chat and email.
 
 
-COPYRIGHT INFORMATION
----------------------
-
-Copyright (C) 2012 Harini Ramakrishnan and Vinutha Veerayya Hiremath
-Harini Ramakrishnan <harini.ramki@gmail.com> and 
-Vinutha Veerayya Hiremath <mail2vintu@gmail.com>
-
-
 LICENSE INFORMATION
 ---------------------
 
 Please see the file License in this distribution for license terms. Below is the link to the file License.
-https://github.com/?????????????????????//
+https://github.com/HariniVinutha/RideNdivide/blob/master/License.txt
 
 
 REPOSITORY LOCATION
 -------------------
 
 Following is the link for the repository
-https://github.com/ ???????????????????????
+https://github.com/HariniVinutha/RideNdivide
 
 
 BUILD/INSTALL INSTRUCTIONS
 --------------------------
 
 Please read instructions from the following file
-https://github.com/ Developer_Docs??????????????????????
-https://github.com/ User_Docs.txt ??????????????????????
+https://github.com/HariniVinutha/RideNdivide/blob/master/Installation_Guide_For_Developers.pdf
+https://github.com/HariniVinutha/RideNdivide/blob/master/Instruction_For_APK_Installation.txt
+
+The flow of control in the application has been captured using screenshots in the document below
+https://github.com/HariniVinutha/RideNdivide/blob/master/User_Manual.pdf
 
 
 REFERENCE/CREDITS
@@ -99,11 +94,3 @@ http://www.google.com/intl/en/policies/terms/
 Lattitude and Longitude
 http://stackoverflow.com/questions/3574644/how-can-i-find-the-latitude-and-longitude-from-address
 http://stackexchange.com/legal
-
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
